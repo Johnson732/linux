@@ -6,6 +6,8 @@
 # Date: 26-05-25
 #
 # Script to show files and folders recursively
+#
+# Version: 1.0
 ################################################
 
 
