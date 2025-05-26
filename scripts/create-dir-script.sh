@@ -1,5 +1,15 @@
 #!/bin/bash
 
+#################################################
+#
+# Author: Johnson
+# Date: 25-05-25
+#
+# Script to create files inside a new directory
+#
+# Version: 1.0
+################################################
+
 # create directory/folder dir1
 
 mkdir dir1
