@@ -119,3 +119,90 @@ A handy cheat sheet for commonly used Linux commands and concepts.
 ---
 
 > ✅ **Before writing or sharing shell scripts, always verify the correct executable using the shebang line.**
+
+## 🛠️ Advanced Scripting & Process Management
+
+| Command | Description |
+|---------|-------------|
+| `ps` | Display current running processes |
+| `ps -ef` | Show all processes in full format |
+| `df -h` | Disk space usage in human-readable format |
+| `grep` | Search/filter output |
+| `ps -ef \| grep "ps"` | Example: Filter process list for "ps" |
+| `./script.sh \| grep "anymatch"` | Filter script output |
+| `|` (pipe) | Send output of one command as input to another |
+| `set -x` | Enable debug mode (print commands as they run) |
+| `set -e` | Exit script on any error |
+| `set -o pipefail` | Catch errors in all piped commands, not just the last |
+
+---
+
+## 🔍 Text Processing with `awk`
+
+| Command | Description |
+|---------|-------------|
+| `awk` | Pattern scanning and processing |
+| `ps -ef \| grep "ps" \| awk -F" " '{print $1}'` | Print the first column of matching processes |
+| `echo "John 23 Dev" \| awk -F" " '{print $1}'` | Output: `John` |
+| `ps -ef \| awk '{print $1, $8}'` | Print user and command path |
+| `awk -F":" '{print $1}' /etc/passwd` | List usernames from `/etc/passwd` |
+| `$1` | Refers to the first column/field |
+| `print` | Output statement in `awk` |
+
+---
+
+## 🔎 File Search with `find`
+
+| Command | Description |
+|---------|-------------|
+| `find / -name file.txt` | Search for `file.txt` starting from root |
+| `find /e/ -name file1.txt` | Search within `/e/` directory |
+
+---
+
+## 🛑 Signal Trapping
+
+| Command | Description |
+|---------|-------------|
+| `trap` | Capture signals like `Ctrl + C` (SIGINT) |
+
+---
+
+## 📥 Data Fetching
+
+| Command | Description |
+|---------|-------------|
+| `curl https://link \| grep ERROR` | Fetch URL content and look for "ERROR" |
+| `curl` | Transfer data from or to a server |
+| `wget` | Download files from the internet |
+
+---
+
+## 🔁 Control Flow: If-Else & Loops
+
+### 🧮 If-Else Example
+
+```bash
+#!/bin/bash
+
+value=10
+
+if [ "$value" -lt 5 ]; then
+  echo "Less than 5"
+elif [ "$value" -lt 15 ]; then
+  echo "Less than 15"
+else
+  echo "15 or more"
+fi
+
+```
+
+### 🔁 For Loop Example
+
+```bash
+for i in {1..10}
+do
+  echo "Number: $i"
+done
+
+```
